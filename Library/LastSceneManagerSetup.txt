@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/GameAssets/Escenas/Encuentros/TESTS/Escena_Grande.unity
+- path: Assets/GameAssets/Escenas/Overworld/ShaderTests.unity
   isLoaded: 1
   isActive: 1
