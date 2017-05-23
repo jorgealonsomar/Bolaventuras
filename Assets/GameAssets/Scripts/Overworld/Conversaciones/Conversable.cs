@@ -27,6 +27,4 @@ public class Conversable : MonoBehaviour {
 			cmp_MarcoConversacion.NuevaConversacion (conversacion);
 		}
 	}
-
-
 }

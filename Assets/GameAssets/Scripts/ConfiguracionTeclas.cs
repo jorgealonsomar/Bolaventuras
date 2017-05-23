@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ConfiguracionTeclas : MonoBehaviour {
 
-	public static KeyCode flipperIzquierdo = KeyCode.LeftControl;
-	public static KeyCode flipperDerecho = KeyCode.RightControl;
+    public static KeyCode flipperIzquierdo = KeyCode.Z; // KeyCode.LeftControl;
+    public static KeyCode flipperDerecho = KeyCode.X; // KeyCode.RightControl;
 
 	public static KeyCode moverFlippersALaIzquierda = KeyCode.LeftArrow;
 	public static KeyCode moverFlippersALaDerecha = KeyCode.RightArrow;
@@ -14,5 +14,5 @@ public class ConfiguracionTeclas : MonoBehaviour {
     public static KeyCode arriba = KeyCode.UpArrow;
     public static KeyCode abajo = KeyCode.DownArrow;
 
-	public static KeyCode avanzarConversacion = KeyCode.RightControl;
+    public static KeyCode avanzarConversacion = KeyCode.X; // KeyCode.RightControl;
 }

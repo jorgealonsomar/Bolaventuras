@@ -7,13 +7,13 @@ public class Flipper : MonoBehaviour {
 
 	public float potencia;
 	public KeyCode tecla = KeyCode.LeftControl;
+    public bool derecho = false;
 	public bool flipperPrincipal;
-
 
 	void Start () {
 		cmp_HingeJoint = GetComponent<HingeJoint> ();
-	}
-
+        tecla = derecho ? ConfiguracionTeclas.flipperDerecho : ConfiguracionTeclas.flipperIzquierdo;
+    }
 
 	void Update () {
 		if (Input.GetKeyDown (tecla)) {
@@ -22,7 +22,6 @@ public class Flipper : MonoBehaviour {
 			ActivarFlipper (false);
 		}
 	}
-
 
 	void ActivarFlipper (bool activar) {
 		JointSpring jointSpring = cmp_HingeJoint.spring;
