@@ -9,20 +9,21 @@ public class Conversable : MonoBehaviour {
 	MarcoConversacion cmp_MarcoConversacion;
 
 
-	void Start () {
+	void Start ()
+	{
 		cmp_MarcoConversacion = GameObject.FindObjectOfType<MarcoConversacion> ();
 
 		//Borrar despues:
 		conversacion = new Conversacion (nConversacion);
-
 	}
 
 
-	void OnTriggerStay (Collider col) {
+	void OnTriggerStay (Collider col)
+	{
 		if (col.tag == "Bola" && Input.GetKeyDown (ConfiguracionTeclas.flipperDerecho)
 		    && Mision.estadoDelJuego == Mision.EstadoDelJuego.Libre) {
 
-			transform.parent.LookAt (col.transform.position);
+			transform.parent.LookAt (new Vector3 (col.transform.position.x, this.transform.position.y, col.transform.position.z));
 
 			cmp_MarcoConversacion.NuevaConversacion (conversacion);
 		}
