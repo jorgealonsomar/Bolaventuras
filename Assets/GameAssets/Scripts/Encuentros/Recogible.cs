@@ -10,7 +10,7 @@ public abstract class Recogible : MonoBehaviour {
 
 
 	void OnTriggerEnter (Collider col) {
-		if (col.tag == "Bola") {
+		if (col.CompareTag ("Bola")) {
 			Recogido ();
 			OtorgarPuntos ();
 			GameObject.FindObjectOfType<ReproductorDeSonidos> ().Reproducir (sonido);

@@ -23,7 +23,7 @@ public class Rompible : MonoBehaviour {
     }
 
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter (Collision collision)
 	{
 		if (collision.collider.tag == "Bola") {
 			float fuerzaDeImpacto = Vector3.Dot (collision.contacts [0].normal, collision.relativeVelocity);
