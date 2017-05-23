@@ -1,0 +1,197 @@
+fileFormatVersion: 2
+guid: 8cbed2ad5ce041d48b1aad2dd71c9833
+timeCreated: 1455222861
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cube
+    100004: Plane
+    100006: Plane.001
+    100008: Ramas
+    100010: Ramas.001
+    100012: Ramas.001|Plane.001|Dupli|0
+    100014: Ramas.001|Plane|Dupli|1
+    100016: Ramas.002
+    100018: Ramas.002|Plane.001|Dupli|0
+    100020: Ramas.002|Plane|Dupli|1
+    100022: Ramas.003
+    100024: Ramas.003|Plane.001|Dupli|0
+    100026: Ramas.003|Plane|Dupli|1
+    100028: Ramas.004
+    100030: Ramas.004|Plane.001|Dupli|0
+    100032: Ramas.004|Plane|Dupli|1
+    100034: Ramas.005
+    100036: Ramas.005|Plane.001|Dupli|0
+    100038: Ramas.005|Plane|Dupli|1
+    100040: Ramas.006
+    100042: Ramas.006|Plane.001|Dupli|0
+    100044: Ramas.006|Plane|Dupli|1
+    100046: Ramas.007
+    100048: Ramas.007|Plane.001|Dupli|0
+    100050: Ramas.007|Plane|Dupli|1
+    100052: Ramas.008
+    100054: Ramas.008|Plane.001|Dupli|0
+    100056: Ramas.008|Plane|Dupli|1
+    100058: Ramas.009
+    100060: Ramas.009|Plane.001|Dupli|0
+    100062: Ramas.009|Plane|Dupli|1
+    100064: Ramas.010
+    100066: Ramas.010|Plane.001|Dupli|0
+    100068: Ramas.010|Plane|Dupli|1
+    100070: Ramas|Plane.001|Dupli|0
+    100072: Ramas|Plane|Dupli|1
+    400000: //RootNode
+    400002: Cube
+    400004: Plane
+    400006: Plane.001
+    400008: Ramas
+    400010: Ramas.001
+    400012: Ramas.001|Plane.001|Dupli|0
+    400014: Ramas.001|Plane|Dupli|1
+    400016: Ramas.002
+    400018: Ramas.002|Plane.001|Dupli|0
+    400020: Ramas.002|Plane|Dupli|1
+    400022: Ramas.003
+    400024: Ramas.003|Plane.001|Dupli|0
+    400026: Ramas.003|Plane|Dupli|1
+    400028: Ramas.004
+    400030: Ramas.004|Plane.001|Dupli|0
+    400032: Ramas.004|Plane|Dupli|1
+    400034: Ramas.005
+    400036: Ramas.005|Plane.001|Dupli|0
+    400038: Ramas.005|Plane|Dupli|1
+    400040: Ramas.006
+    400042: Ramas.006|Plane.001|Dupli|0
+    400044: Ramas.006|Plane|Dupli|1
+    400046: Ramas.007
+    400048: Ramas.007|Plane.001|Dupli|0
+    400050: Ramas.007|Plane|Dupli|1
+    400052: Ramas.008
+    400054: Ramas.008|Plane.001|Dupli|0
+    400056: Ramas.008|Plane|Dupli|1
+    400058: Ramas.009
+    400060: Ramas.009|Plane.001|Dupli|0
+    400062: Ramas.009|Plane|Dupli|1
+    400064: Ramas.010
+    400066: Ramas.010|Plane.001|Dupli|0
+    400068: Ramas.010|Plane|Dupli|1
+    400070: Ramas|Plane.001|Dupli|0
+    400072: Ramas|Plane|Dupli|1
+    2300000: Cube
+    2300002: Plane
+    2300004: Plane.001
+    2300006: Ramas.001|Plane.001|Dupli|0
+    2300008: Ramas.001|Plane|Dupli|1
+    2300010: Ramas.002|Plane.001|Dupli|0
+    2300012: Ramas.002|Plane|Dupli|1
+    2300014: Ramas.003|Plane.001|Dupli|0
+    2300016: Ramas.003|Plane|Dupli|1
+    2300018: Ramas.004|Plane.001|Dupli|0
+    2300020: Ramas.004|Plane|Dupli|1
+    2300022: Ramas.005|Plane.001|Dupli|0
+    2300024: Ramas.005|Plane|Dupli|1
+    2300026: Ramas.006|Plane.001|Dupli|0
+    2300028: Ramas.006|Plane|Dupli|1
+    2300030: Ramas.007|Plane.001|Dupli|0
+    2300032: Ramas.007|Plane|Dupli|1
+    2300034: Ramas.008|Plane.001|Dupli|0
+    2300036: Ramas.008|Plane|Dupli|1
+    2300038: Ramas.009|Plane.001|Dupli|0
+    2300040: Ramas.009|Plane|Dupli|1
+    2300042: Ramas.010|Plane.001|Dupli|0
+    2300044: Ramas.010|Plane|Dupli|1
+    2300046: Ramas|Plane.001|Dupli|0
+    2300048: Ramas|Plane|Dupli|1
+    3300000: Cube
+    3300002: Plane
+    3300004: Plane.001
+    3300006: Ramas.001|Plane.001|Dupli|0
+    3300008: Ramas.001|Plane|Dupli|1
+    3300010: Ramas.002|Plane.001|Dupli|0
+    3300012: Ramas.002|Plane|Dupli|1
+    3300014: Ramas.003|Plane.001|Dupli|0
+    3300016: Ramas.003|Plane|Dupli|1
+    3300018: Ramas.004|Plane.001|Dupli|0
+    3300020: Ramas.004|Plane|Dupli|1
+    3300022: Ramas.005|Plane.001|Dupli|0
+    3300024: Ramas.005|Plane|Dupli|1
+    3300026: Ramas.006|Plane.001|Dupli|0
+    3300028: Ramas.006|Plane|Dupli|1
+    3300030: Ramas.007|Plane.001|Dupli|0
+    3300032: Ramas.007|Plane|Dupli|1
+    3300034: Ramas.008|Plane.001|Dupli|0
+    3300036: Ramas.008|Plane|Dupli|1
+    3300038: Ramas.009|Plane.001|Dupli|0
+    3300040: Ramas.009|Plane|Dupli|1
+    3300042: Ramas.010|Plane.001|Dupli|0
+    3300044: Ramas.010|Plane|Dupli|1
+    3300046: Ramas|Plane.001|Dupli|0
+    3300048: Ramas|Plane|Dupli|1
+    4300000: Plane.001
+    4300002: Cube
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
