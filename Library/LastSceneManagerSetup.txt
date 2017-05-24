@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/GameAssets/Escenas/Encuentros/TESTS/Escena_Grande.unity
-  isLoaded: 1
-  isActive: 1
