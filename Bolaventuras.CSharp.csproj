@@ -84,11 +84,11 @@
     <Reference Include="DOTween">
       <HintPath>Assets\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
-    <Reference Include="DOTween46">
-      <HintPath>Assets\Demigiant\DOTween\DOTween46.dll</HintPath>
-    </Reference>
     <Reference Include="DOTween43">
       <HintPath>Assets\Demigiant\DOTween\DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>Assets\Demigiant\DOTween\DOTween46.dll</HintPath>
     </Reference>
     <Reference Include="DOTween50">
       <HintPath>Assets\Demigiant\DOTween\DOTween50.dll</HintPath>
@@ -102,6 +102,7 @@
     <Compile Include="Assets\GameAssets\Scripts\CamaraSeguir.cs" />
     <Compile Include="Assets\GameAssets\Scripts\ConfiguracionTeclas.cs" />
     <Compile Include="Assets\GameAssets\Scripts\DetectorDeContacto.cs" />
+    <Compile Include="Assets\GameAssets\Scripts\Encuentros\Atraible.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Bola.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\CartelPuntos.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Encuentro.cs" />
@@ -127,7 +128,10 @@
     <Compile Include="Assets\GameAssets\Scripts\Overworld\Jugador\ControlJugador.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Overworld\Jugador\Jugador.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Overworld\Mision.cs" />
+    <Compile Include="Assets\GameAssets\Scripts\Referencias.cs" />
     <Compile Include="Assets\GameAssets\Scripts\ReproductorDeSonidos.cs" />
+    <Compile Include="Assets\GameAssets\Scripts\Texto\CSVLector.cs" />
+    <Compile Include="Assets\GameAssets\Scripts\Texto\CSVTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
