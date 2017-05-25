@@ -3,9 +3,13 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+    GameManager instance;
 
-	void Start () {
-		
+	void Awake () {
+		if(instance == null)
+        {
+
+        }
 	}
 
 

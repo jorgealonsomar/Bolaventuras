@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+    <Compile Include="Assets\GameAssets\Gráficos\Transiciones\Transicion.cs" />
     <Compile Include="Assets\GameAssets\Scripts\CamaraALaAltura.cs" />
     <Compile Include="Assets\GameAssets\Scripts\CamaraAgitable.cs" />
     <Compile Include="Assets\GameAssets\Scripts\CamaraSeguir.cs" />
@@ -143,6 +144,7 @@
     <None Include="Assets\GameAssets\Gráficos\Shaders\Animacion.shader" />
     <None Include="Assets\GameAssets\Gráficos\Shaders\Standard.shader" />
     <None Include="Assets\GameAssets\Gráficos\Shaders\Test.shader" />
+    <None Include="Assets\GameAssets\Gráficos\Transiciones\Transición.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
