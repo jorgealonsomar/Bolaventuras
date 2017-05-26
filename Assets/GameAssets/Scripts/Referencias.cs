@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Referencias : MonoBehaviour {
 
-	public static GameManager gameManager;
+	public static Juego gameManager;
 	public static ReproductorDeSonidos reproductorDeSonidos;
 
 	void Awake ()
 	{
-		gameManager = FindObjectOfType<GameManager> ();
+		gameManager = FindObjectOfType<Juego> ();
 		reproductorDeSonidos = FindObjectOfType<ReproductorDeSonidos> ();
 
 	}

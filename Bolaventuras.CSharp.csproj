@@ -122,7 +122,7 @@
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Obstaculos\SonoroAlSerGolpeado.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Recogible.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\TriggerMuerteInferior.cs" />
-    <Compile Include="Assets\GameAssets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\GameAssets\Scripts\Juego.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Overworld\Conversaciones\Conversable.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Overworld\Conversaciones\Conversacion.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Overworld\Conversaciones\MarcoConversacion.cs" />

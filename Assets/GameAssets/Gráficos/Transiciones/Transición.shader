@@ -29,7 +29,7 @@
 				fixed4 col = tex2D(_MainTex, i.uv);
 				fixed cr = tex2D(_RampTex, i.uv).r;
 
-				if (cr < _Corte) {
+				if (cr < _Corte * 1.1) {
 					col = _Color;
 				}
 

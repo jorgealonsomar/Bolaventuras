@@ -20,11 +20,18 @@ public class Mision : MonoBehaviour {
 	[SerializeField] float counter;
 	[SerializeField] float tiempoHastaProximoEncuentro;
 
+    Jugador jugador;
+    Juego juego;
 
 	void Start () {
 		estadoDelJuego = EstadoDelJuego.Libre;
 
 		CalcularTiempoHastaProximoEncuentro ();
+
+        juego = Juego.instancia;
+        juego.SetMision(this);
+
+        jugador = FindObjectOfType<Jugador>();
 	}
 
 
@@ -32,18 +39,18 @@ public class Mision : MonoBehaviour {
 		if (maxTiempoHastaProximoEncuentro > 0) //Si maxTiempoHastaProximoEncuentro es cero (o negativo),
 		{										//no se realiza ningun encuentro aleatorio.
 
-			if (Input.GetKey (ConfiguracionTeclas.izquierda) ||
+			if ((Input.GetKey (ConfiguracionTeclas.izquierda) ||
 			    Input.GetKey (ConfiguracionTeclas.derecha) ||
 			    Input.GetKey (ConfiguracionTeclas.arriba) ||
-			    Input.GetKey (ConfiguracionTeclas.abajo)) {
+			    Input.GetKey (ConfiguracionTeclas.abajo))) {
 
 				counter += Time.deltaTime;
 			}
 
-			if (counter >= tiempoHastaProximoEncuentro) {
+			if (counter >= tiempoHastaProximoEncuentro && jugador.suelo) { //Sólo trigerear batalla cuando el jugador está en contacto con el suelo (para no comenzar la batalla en mitad de un salto)
 				counter = 0;
 				CalcularTiempoHastaProximoEncuentro ();
-//				NuevoEncuentro ();
+				juego.NuevoEncuentro(encuentros[Random.Range(0, encuentros.Length)]);
 			}
 		}
 	}
@@ -51,13 +58,6 @@ public class Mision : MonoBehaviour {
 
 	void CalcularTiempoHastaProximoEncuentro () {
 		tiempoHastaProximoEncuentro = Random.Range (minTiempoHastaProximoEncuentro, maxTiempoHastaProximoEncuentro);
-	}
-
-
-	void NuevoEncuentro () {
-		SceneManager.LoadScene (encuentros[0], LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(encuentros[0]));
-        sala.SetActive(false);	
 	}
 
     public void Reactivar()

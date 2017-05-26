@@ -14,7 +14,8 @@ public class Encuentro : MonoBehaviour {
 
 	static int coils;
 	static int puntos;
-	
+
+    Juego juego;
 
 	void Start () {
 		Encuentro.posicionInicial = GameObject.FindGameObjectWithTag ("PosicionInicial").transform;
@@ -22,7 +23,9 @@ public class Encuentro : MonoBehaviour {
 		ColocarBolaEnPosicionInicial ();
 
 		enemigos = GameObject.FindGameObjectsWithTag ("Enemigo").Length;
-//		overworld = GameObject.FindObjectOfType<Mision> ();
+
+        juego = Juego.instancia;
+        juego.SetEncuentro(this);
 	}
 
 
