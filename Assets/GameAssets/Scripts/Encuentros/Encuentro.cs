@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -6,23 +7,50 @@ public class Encuentro : MonoBehaviour {
 
 	public static Transform posicionInicial;
 
-    public int enemigos;
+	int _nEnemigos;
+    public int NEnemigos {
+		get { return _nEnemigos; }
+		set {
+			_nEnemigos = value;
+			if (value == 0) HaSidoGanado = true;
+		}
+	}
 
-//    Mision overworld;
-    DesplegadorDeObstaculos[] desplegadores;
-//	bool ready = false;
+	public GameObject prefabCartelPuntos;
+	public GameObject prefabCartelMonedas;
 
-	static int coils;
-	static int puntos;
+	Text textMonedas; 
+	Text textPuntos; 
+
+	bool _haSidoGanado = false;
+	bool HaSidoGanado {
+		get { return _haSidoGanado; }
+		set {
+			_haSidoGanado = value;
+			//TODO: Cambiar musica
+		}
+	}
+
+	int coils;
+	int puntos;
 
     Juego juego;
 
-	void Start () {
+
+	void Awake ()
+	{
 		Encuentro.posicionInicial = GameObject.FindGameObjectWithTag ("PosicionInicial").transform;
 
+		textMonedas = GameObject.Find ("Canvas Encuentro/Fondo/Coins Text").GetComponent<Text> ();
+		textPuntos = GameObject.Find ("Canvas Encuentro/Fondo/Points Text").GetComponent<Text> ();
+	}
+
+
+	void Start ()
+	{
 		ColocarBolaEnPosicionInicial ();
 
-		enemigos = GameObject.FindGameObjectsWithTag ("Enemigo").Length;
+		NEnemigos = GameObject.FindGameObjectsWithTag ("Enemigo").Length;
 
         juego = Juego.instancia;
         juego.SetEncuentro(this);
@@ -30,32 +58,17 @@ public class Encuentro : MonoBehaviour {
 
 
 
-	void Update () {
-		if (Input.GetKeyDown (KeyCode.K)) {
+	void Update ()
+	{
+		if (Input.GetKeyDown (KeyCode.K) && Application.isEditor)
+		{
 			ColocarBolaEnPosicionInicial ();
 		}
-
-		Debug.Log ("Coils: " + coils);
-		Debug.Log ("Puntos: " + puntos);
-
-//        if (!ready)
-//        {
-//            ready = true;
-//            foreach (DesplegadorDeObstaculos desplegador in desplegadores)
-//            {
-//                if (!desplegador.ready) ready = false;
-//            }
-//        }
-
-//        if (enemigos <= 0)
-//        {
-//            overworld.Reactivar();
-//            SceneManager.UnloadScene(2);
-//        }
 	}
 
 
-	public static void ColocarBolaEnPosicionInicial () {
+	public void ColocarBolaEnPosicionInicial ()
+	{
 		Bola bola = FindObjectOfType<Bola> ();
 		bola.transform.position = posicionInicial.position;
 		bola.transform.rotation = posicionInicial.rotation;
@@ -63,12 +76,43 @@ public class Encuentro : MonoBehaviour {
 	}
 
 
-	public static void AddCoils (int nuevosCoils) {
+	public void AddCoils (int nuevosCoils, Vector3? posicionCartel = null)
+	{
 		coils += nuevosCoils;
+		textMonedas.text = " x " + coils;
+
+		if (posicionCartel != null)
+		{
+			GameObject nuevoCartelMonedas = Instantiate<GameObject> (prefabCartelMonedas);
+			nuevoCartelMonedas.transform.position = ((Vector3)posicionCartel) + (Vector3.up * 4.0f);
+			nuevoCartelMonedas.GetComponent<CartelPuntos> ().SetPoints (nuevosCoils);
+		}
 	}
 
 
-	public static void SumarPuntos (int puntosASumar) {
+	public void SumarPuntos (int puntosASumar, Vector3? posicionCartel = null)
+	{
 		puntos += puntosASumar;
+		textPuntos.text = "Puntos: " + puntos;
+
+		if (posicionCartel != null)
+		{
+			GameObject nuevoCartelPuntos = Instantiate<GameObject> (prefabCartelPuntos);
+			nuevoCartelPuntos.transform.position = ((Vector3)posicionCartel) + (Vector3.up * 4.0f);
+			nuevoCartelPuntos.GetComponent<CartelPuntos> ().SetPoints (puntosASumar);
+		}
+	}
+
+
+	public void BolaDestruida (Bola bola)
+	{
+		if (HaSidoGanado)
+		{
+			juego.VolverAlOverworld ();
+		}
+		else
+		{
+			ColocarBolaEnPosicionInicial ();
+		}
 	}
 }

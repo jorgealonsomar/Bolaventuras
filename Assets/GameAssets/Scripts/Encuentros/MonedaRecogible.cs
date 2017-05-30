@@ -8,6 +8,6 @@ public class MonedaRecogible : Recogible {
 
 	protected override void Recogido ()
 	{
-		Encuentro.AddCoils (valorMoneda);
+		Referencias.encuentro.AddCoils (valorMoneda, this.transform.position);
 	}
 }

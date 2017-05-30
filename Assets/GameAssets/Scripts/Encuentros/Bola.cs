@@ -48,4 +48,10 @@ public class Bola : MonoBehaviour {
 		}
 	}
 
+
+	public void SerDestruida ()
+	{
+		Referencias.encuentro.BolaDestruida (this);
+	}
+
 }

@@ -18,7 +18,7 @@ public class Juego : MonoBehaviour {
             if (m_instancia == null)
             {
                 GameObject nuevaInstancia = new GameObject("Juego", new System.Type[]{typeof(Juego)}); //Nuevo objeto con el componente Juego
-                return nuevaInstancia.GetComponent<Juego>(); 
+                return nuevaInstancia.GetComponent<Juego> ();
             }
             else return m_instancia;
         }
@@ -36,14 +36,14 @@ public class Juego : MonoBehaviour {
     }
 
 
-    void Update () {
-        /*if (camara == null || Camera.main != camara)
-        {
-            camara = Camera.main;
-        }*/
-	}
+//    void Update () {
+//        if (camara == null || Camera.main != camara)
+//        {
+//            camara = Camera.main;
+//        }
+//	}
 
-    public void SetMision(Mision nuevaMision)
+    public void SetMision (Mision nuevaMision)
     {
         if (mision != null) Destroy(mision);
         mision = nuevaMision;
@@ -53,28 +53,26 @@ public class Juego : MonoBehaviour {
         ActualizarCamara();
     }
 
-    public void SetEncuentro(Encuentro nuevoEncuentro)
+    public void SetEncuentro (Encuentro nuevoEncuentro)
     {
-        mision.gameObject.SetActive(false);
+		if (mision != null) mision.gameObject.SetActive (false);
         if (encuentro != null) Destroy(encuentro);
         encuentro = nuevoEncuentro;
-
-        mision.gameObject.SetActive(false); //Desactivar overworld
 
         ActualizarCamara();
     }
 
-    void ActualizarCamara()
+    void ActualizarCamara ()
     {
         camara = Camera.main;
     }
 
-    public void NuevoEncuentro(string encuentro)
+    public void NuevoEncuentro (string encuentro)
     {
-        StartCoroutine(TransicionDeEncuentro(encuentro));
+        StartCoroutine (TransicionDeEncuentro(encuentro));
     }
 
-    IEnumerator TransicionDeEncuentro(string escena)
+    IEnumerator TransicionDeEncuentro (string escena)
     {
         Transicion transicion = camara.GetComponent<Transicion>();
         if (transicion == null) camara.gameObject.AddComponent<Transicion>();
@@ -86,4 +84,14 @@ public class Juego : MonoBehaviour {
 
         SceneManager.LoadScene(escena);
     }
+
+	public void VolverAlOverworld ()
+	{
+		if (mision != null) {
+			mision.gameObject.SetActive (true);
+			Destroy (encuentro.gameObject);
+		} else {
+			Debug.LogWarning ("No hay mision a la que volver (!)");
+		}
+	}
 }

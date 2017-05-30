@@ -17,9 +17,9 @@ public class DesplegadorDeObstaculos : MonoBehaviour
 
     public bool ready = false;
 
-    void Start()
+    void Start ()
     {
-        colliderZona = GetComponentInChildren<BoxCollider>();
+        colliderZona = GetComponentInChildren<BoxCollider> ();
 
         DesplegarObstaculos();
         ready = true;

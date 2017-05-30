@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+     <Compile Include="Assets\GameAssets\Gráficos\Transiciones\Transicion.cs" />
      <Compile Include="Assets\GameAssets\Scripts\CamaraALaAltura.cs" />
      <Compile Include="Assets\GameAssets\Scripts\CamaraAgitable.cs" />
      <Compile Include="Assets\GameAssets\Scripts\CamaraSeguir.cs" />
@@ -57,6 +58,7 @@
      <Compile Include="Assets\GameAssets\Scripts\Encuentros\Bola.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Encuentros\CartelPuntos.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Encuentros\Encuentro.cs" />
+     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Enemigo.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Encuentros\Flipper.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Encuentros\Flippers.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Encuentros\Generación aleatoria\Desplegable.cs" />
@@ -72,7 +74,7 @@
      <Compile Include="Assets\GameAssets\Scripts\Encuentros\Obstaculos\SonoroAlSerGolpeado.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Encuentros\Recogible.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Encuentros\TriggerMuerteInferior.cs" />
-     <Compile Include="Assets\GameAssets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\GameAssets\Scripts\Juego.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Overworld\Conversaciones\Conversable.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Overworld\Conversaciones\Conversacion.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Overworld\Conversaciones\MarcoConversacion.cs" />
@@ -81,9 +83,12 @@
      <Compile Include="Assets\GameAssets\Scripts\Overworld\Mision.cs" />
      <Compile Include="Assets\GameAssets\Scripts\Referencias.cs" />
      <Compile Include="Assets\GameAssets\Scripts\ReproductorDeSonidos.cs" />
+     <Compile Include="Assets\GameAssets\Scripts\Texto\CSVLector.cs" />
+     <Compile Include="Assets\GameAssets\Scripts\Texto\CSVTest.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
+     <None Include="Assets\GameAssets\Gráficos\Transiciones\Transición.shader" />
      <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
      <None Include="Assets\GameAssets\Gráficos\Shaders\Standard.shader" />
      <None Include="Assets\GameAssets\Gráficos\Shaders\Animacion.shader" />

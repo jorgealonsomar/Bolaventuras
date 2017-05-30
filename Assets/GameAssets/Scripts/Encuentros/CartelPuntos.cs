@@ -7,21 +7,25 @@ public class CartelPuntos : MonoBehaviour {
 	public float fadeDuration;
 	public float upVelocity;
 
+	public string sufijo = "+";
+
 	int points;
 
 	Text cmp_Text;
 	float alpha = 1;
 
 
-	void Start () {
+	void Start ()
+	{
 		cmp_Text = GetComponentInChildren<Text> ();
 
-		cmp_Text.text = points.ToString ();
+		cmp_Text.text = sufijo + points.ToString ();
 		Destroy (this.gameObject, fadeDuration);
 	}
 	
 
-	void Update () {
+	void Update ()
+	{
 		//Reducir el alpha (transparencia) del texto
 		alpha -= Time.deltaTime / fadeDuration;
 

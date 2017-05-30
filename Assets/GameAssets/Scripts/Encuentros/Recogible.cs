@@ -30,7 +30,7 @@ public abstract class Recogible : MonoBehaviour {
 				this.transform.position.z);
 			nuevoCartelPuntos.GetComponent<CartelPuntos> ().SetPoints (puntosOtorgados);
 
-			Encuentro.SumarPuntos (puntosOtorgados);
+			Referencias.encuentro.SumarPuntos (puntosOtorgados);
 		}
 	}
 }

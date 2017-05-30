@@ -59,9 +59,9 @@ public class Rompible : MonoBehaviour {
 			monedaRb.AddTorque (Random.Range (0, 100), Random.Range (0, 100), Random.Range (0, 100));
 		}
 
-        if (tag=="Enemigo")
+		if (CompareTag ("Enemigo"))
         {
-            encuentro.enemigos -= 1;
+            encuentro.NEnemigos -= 1;
         }
 		Destroy (gameObject);
 	}
