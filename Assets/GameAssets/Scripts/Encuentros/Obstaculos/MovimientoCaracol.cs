@@ -3,11 +3,7 @@ using System.Collections;
 
 public class MovimientoCaracol : MonoBehaviour {
 
-	public enum Estado {
-		Parado,
-		Avanzando,
-		Girando
-	}
+	public enum Estado { Parado, Avanzando, Girando }
 
 
 	public DetectorDeContacto detectorDeContacto;
@@ -18,11 +14,15 @@ public class MovimientoCaracol : MonoBehaviour {
 
 	float timer;
 
-	public int velocidadAvance = 1;
+	public float velocidadAvance = 0.25f;
+	public float velocidadMaxima = 2.0f;
 	float tiempoParado = 2.0f;
 	float tiempoGirando = 1.0f;
 
-	float rotacionAAlcanzar;
+	public float velocidadRotacion = 100.0f;
+
+//	float rotacionInicial;
+//	float rotacionAAlcanzar;
 
 
 	void Start () {
@@ -34,25 +34,37 @@ public class MovimientoCaracol : MonoBehaviour {
 	void FixedUpdate () {
 		timer += Time.deltaTime;
 
-		if (estado == Estado.Parado && timer >= tiempoParado) {
+		if (estado == Estado.Parado && timer >= tiempoParado)
+		{
 			timer = 0.0f;
 			EmpezarAGirar ();
 		}
 
-		else if (estado == Estado.Girando) {
+		else if (estado == Estado.Girando)
+		{
 			if (timer >= tiempoGirando) {
 				timer = 0.0f;
 				estado = Estado.Avanzando;
 			} else {
 				//TODO seguir interpolando rotacion
-				transform.rotation = Quaternion.Euler ( new Vector3 (transform.rotation.x,
-					Mathf.LerpAngle (transform.rotation.y, rotacionAAlcanzar, (timer / tiempoGirando)),
-					transform.rotation.z) );
+//				transform.rotation = Quaternion.Euler (
+//					new Vector3 (transform.rotation.x,
+//					Mathf.LerpAngle (rotacionInicial, rotacionAAlcanzar, (timer / tiempoGirando)),
+//					transform.rotation.z)
+//				);
+
+				transform.Rotate (transform.up * velocidadRotacion * Time.fixedDeltaTime);
 			}
 		}
 
-		else if (estado == Estado.Avanzando) {
-			rb.velocity = (transform.forward * velocidadAvance);
+		else if (estado == Estado.Avanzando)
+		{
+			rb.velocity += (transform.forward * velocidadAvance * Time.fixedDeltaTime);
+
+			if (rb.velocity.magnitude > velocidadMaxima)
+			{
+				rb.velocity = rb.velocity.normalized * velocidadMaxima;
+			}
 
 			//Si choca
 			if (detectorDeContacto.HayContacto ()) {
@@ -60,15 +72,15 @@ public class MovimientoCaracol : MonoBehaviour {
 				estado = Estado.Parado;
 			}
 		}
-
-
 	}
 
 
 	void EmpezarAGirar () {
 		estado = Estado.Girando;
 
-		rotacionAAlcanzar = Random.Range (0, 360.0f);
+		// Velocidad al azar entre 90 y 180 grados, hacia la izquierda o hacia la derecha
+		velocidadRotacion = Random.Range (0.0f, 90.0f) + 90.0f;
+		if (Random.Range (0, 1) == 0) velocidadRotacion = -velocidadRotacion;
 	}
 
 
