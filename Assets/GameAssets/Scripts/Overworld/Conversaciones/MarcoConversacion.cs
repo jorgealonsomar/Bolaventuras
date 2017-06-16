@@ -21,9 +21,13 @@ public class MarcoConversacion : MonoBehaviour {
 
 	bool sePuedeAvanzarElTexto;
 
+    bool bestFit;
+    int fontSize;
 
 	void Start () {
 		reproductorDeSonidos = GameObject.FindObjectOfType<ReproductorDeSonidos> ();
+        bestFit = texto.resizeTextForBestFit;
+        fontSize = texto.fontSize;
 	}
 
 
@@ -70,30 +74,72 @@ public class MarcoConversacion : MonoBehaviour {
 
 
 	IEnumerator EscribirElTexto (string textoAEscribir) {
-		texto.text = "";
-		bool sonar = false;
+        //GENERAR LINEAS PARA EVITAR QUE EL TEXTO SALTE EN MITAD DE UNA PALABRA
+        SetBestFit(true);
+        texto.text = textoAEscribir;
 
-		for (int i = 0; i < textoAEscribir.Length; i++) {
-			string caracter = textoAEscribir.Substring (i, 1);
+        //Si no se hace esto el tamaño de la fuente generada con BestFit no coincide con el que debería tener no sé por qué ???
+        texto.cachedTextGenerator.Invalidate();
+        TextGenerationSettings tempSettings = texto.GetGenerationSettings(((RectTransform)texto.transform).rect.size);
+        tempSettings.scaleFactor = 1;
+        if (!texto.cachedTextGenerator.Populate(textoAEscribir, tempSettings))
+            Debug.LogError("Failed to generate fit size");
+        //--------
 
-			if (caracter == "$")
-			{
-				yield return new WaitUntil (() => Input.GetKeyDown (ConfiguracionTeclas.avanzarConversacion));
-			}
-			else
-			{
-				texto.text += caracter;
+        string[] lineas = new string[texto.cachedTextGenerator.lineCount];
+        for (int i = 0; i < lineas.Length; i++)
+        {
+            int indice = texto.cachedTextGenerator.lines[i].startCharIdx;
+            if (i < lineas.Length - 1) {             
+                int indiceFinal = texto.cachedTextGenerator.lines[i + 1].startCharIdx;
+                lineas[i] = textoAEscribir.Substring(indice, indiceFinal - indice); 
+            }
+            else
+            {
+                lineas[i] = textoAEscribir.Substring(indice);
+            }
+            lineas[i] = lineas[i].Trim();
+        }
 
-				sonar = !sonar;
-				if (sonar) {
-					reproductorDeSonidos.Reproducir (sonidoTypewriter);
-				}
+        SetBestFit(false); //aquí se asigna el tamaño de la fuente generada al tamaño predeterminado de la fuente
 
-				yield return new WaitForSeconds (velocidadTexto);
-			}
-		}
+        //ESCRIBIR EL TEXTO
+        
+        texto.text = "";        
+        bool sonar = false;
 
+        for (int linea = 0; linea < lineas.Length; linea++)
+        {
+            for (int i = 0; i < lineas[linea].Length; i++)
+            {
+                string caracter = lineas[linea].Substring(i, 1);
 
-		sePuedeAvanzarElTexto = true;
+                if (caracter == "$")
+                {
+                    yield return new WaitUntil(() => Input.GetKeyDown(ConfiguracionTeclas.avanzarConversacion));
+                }
+                else
+                {
+                    texto.text += caracter;
+
+                    sonar = !sonar;
+                    if (sonar)
+                    {
+                        reproductorDeSonidos.Reproducir(sonidoTypewriter);
+                    }
+
+                    yield return new WaitForSeconds(velocidadTexto);
+                }
+            }
+            texto.text += "\n";
+        }
+
+        sePuedeAvanzarElTexto = true;
 	}
+
+    void SetBestFit(bool setIt)
+    {
+        texto.fontSize = setIt ? fontSize : texto.cachedTextGenerator.fontSizeUsedForBestFit;
+        texto.resizeTextForBestFit = setIt;        
+    }
 }

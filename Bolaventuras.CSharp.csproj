@@ -107,6 +107,7 @@
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Bola.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\CartelPuntos.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Encuentro.cs" />
+    <Compile Include="Assets\GameAssets\Scripts\Encuentros\Enemigo.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Flipper.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Flippers.cs" />
     <Compile Include="Assets\GameAssets\Scripts\Encuentros\Generación aleatoria\Desplegable.cs" />

@@ -41,7 +41,6 @@ public static class CSVLector
 
             foreach (string dato in datos)
             {
-                Debug.Log(dato);
                 if(dato.IndexOf(":") >= 0) claves.Add(dato.Split(":"[0])[0].ToLower(), dato.Split(":"[0])[1].ToLower());
             }
 
@@ -86,8 +85,8 @@ public static class CSVLector
                 string fila = filas[y];
 
                 fila = fila.Remove(0, 1);
-                fila = fila.Remove(fila.LastIndexOf('\"'), 1);
-                fila = fila.Replace(@"\n", "\n");
+                fila = fila.Remove(fila.LastIndexOf('\"'), fila.Length - fila.LastIndexOf('\"'));
+                //fila = fila.Replace(@"\n", "\n");
 
                 textos.Add(Regex.Split(fila, "\",\""));
             }
