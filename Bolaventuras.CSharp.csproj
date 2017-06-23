@@ -146,6 +146,7 @@
     <None Include="Assets\GameAssets\Gráficos\Shaders\Standard.shader" />
     <None Include="Assets\GameAssets\Gráficos\Shaders\Test.shader" />
     <None Include="Assets\GameAssets\Gráficos\Transiciones\Transición.shader" />
+    <None Include="Assets\GameAssets\TestTerreno\Terrain.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
